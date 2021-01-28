@@ -20,7 +20,7 @@
     "chessground": "^7.3.5",
     "compare-versions": "^3.4.0",
     "debug": "^4.1.1",
-    "electron": "^4.0.0",
+    "electron": "^9.4.0",
     "fsevents": "^1.2.7",
     "fullname": "^3.3.0",
     "photonkit": "^0.1.2",
