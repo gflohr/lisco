@@ -80,9 +80,9 @@ perft(chi_pos *position, unsigned int depth, unsigned long long *counts,
 	elapsed = rdifftime (rtime (), start);
 
 	if (out) {
-		fprintf (out, "info nodes: %llu (%lu.%02lu s, nps: %llu)\n",
-				nodes, elapsed / 100, elapsed % 100,
-				(100 * nodes) / (elapsed ? elapsed : 1));
+		fprintf (out, "info nodes: %llu (%lu.%002lu s, nps: %llu)\n",
+				nodes, elapsed / 1000, elapsed % 1000,
+				(1000 * nodes) / (elapsed ? elapsed : 1));
 	}
 
 	return nodes;
