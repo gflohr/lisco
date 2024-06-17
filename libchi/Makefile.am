@@ -44,6 +44,7 @@ AM_CPPFLAGS = -I. -I$(srcdir) -I.. -I$(top_srcdir)/lib
 noinst_PROGRAMS = genmasks showfen dump-bitboard
 # *Never* add -lchi here (bootstrapping problem).
 
+include_HEADERS = libchi.h
 noinst_HEADERS = stringbuf.h
 
 showfen_LDADD = -lchi $(top_srcdir)/lib/liblisco.la
