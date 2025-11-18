@@ -17,18 +17,13 @@
 
 SUBDIRS = . tests
 
-bin_PROGRAMS = lisco liscoplay
+bin_PROGRAMS = lisco
 
 noinst_HEADERS = \
 	basename.h \
 	board.h \
 	log.h \
 	lisco.h \
-	liscoplay-engine.h \
-	liscoplay-game.h \
-	liscoplay-loop.h \
-	liscoplay-option.h \
-	liscoplay-time-control.h \
 	uci-engine.h \
 	util.h \
 	xboard-feature.h \
@@ -38,15 +33,8 @@ lisco_SOURCES = lisco.c uci-engine.c util.c think.c perft.c \
 	rtime.c transposition-table.c move-selector.c evaluate.c ev_hash.c \
 	quiescence.c time-control.c move-list.c initialize.c
 
-# FIXME! Remove liscoplay. Can be replaced with cutechess-cli.
-liscoplay_SOURCES = liscoplay.c liscoplay-engine.c log.c liscoplay-game.c \
-	liscoplay-loop.c util.c liscoplay-option.c xboard-feature.c display-board.c \
-	liscoplay-time-control.c
-
 lisco_LDADD = ../lib/liblisco.la ../libchi/libchi.la
 lisco_DEPENDENCIES = $(top_srcdir)/libchi/libchi.la
-liscoplay_LDADD = ../lib/liblisco.la ../libchi/libchi.la
-liscoplay_DEPENDENCIES = $(top_srcdir)/libchi/libchi.la
 
 AM_CPPFLAGS = -I. -I$(srcdir) -I.. -I$(top_srcdir)/lib -I../lib \
 	-I$(top_srcdir)/libchi -I../libchi $(AM_CFLAGS)

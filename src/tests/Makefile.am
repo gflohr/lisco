@@ -18,7 +18,7 @@
 ## Process this file with automake to produce Makefile.in.
 
 noinst_PROGRAMS = check_common check_move_list check_lisco check_search \
-		check_perft check_liscoplay
+		check_perft 
 
 TESTS = ./check_common \
 	./check_lisco \
@@ -27,7 +27,6 @@ TESTS = ./check_common \
 	./check_dm1 \
 	./check_dm2 \
 	./check_dm3 \
-	./check_liscoplay \
 	./check_perft
 
 LISCO_BASE_SOURCES = \
@@ -47,16 +46,6 @@ check_common_SOURCES = \
 		../util.c \
 		test_util.c \
 		check_common.c
-
-check_liscoplay_SOURCES = \
-		../liscoplay-option.c \
-		../liscoplay-time-control.c \
-		../util.c \
-		../xboard-feature.c \
-		test_lisco_time_control.c \
-		test_xboard.c \
-		test_uci.c \
-		check_liscoplay.c
 
 check_lisco_SOURCES = $(LISCO_BASE_SOURCES) \
 		../evaluate.c \
