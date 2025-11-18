@@ -2,11 +2,10 @@
 
 use strict;
 
-use Chess::Rep;
+use Chess::Plisco;
 
 my ($fen) = join ' ', @ARGV;
-
-die "Usage: $0 FEN" unless defined $fen && length $fen;
+$fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1' unless defined $fen;
 
 print <<"EOF";
 START_TEST(test_ FILL IN TEST NAME!)
@@ -16,27 +15,16 @@ START_TEST(test_ FILL IN TEST NAME!)
 	const char *wanted[] = {
 EOF
 
-my $pos = Chess::Rep->new;
-$pos->set_from_fen($fen);
+my $pos = Chess::Plisco->new($fen);
 
 my @moves;
-foreach my $move (@{$pos->status->{moves}}) {
-	my $from = Chess::Rep::get_field_id($move->{from});
-	my $to = Chess::Rep::get_field_id($move->{to});
-
-	my $uci_move = lc "$from$to";
-
-	if ((($from =~ /^.7$/ && $to =~ /^.8/) || ($from =~ /^.2$/ && $to =~ /^.1/))
-	    && $move->{piece} & 0x1) {
-		push @moves, "${uci_move}q", "${uci_move}r", "${uci_move}b", "${uci_move}n";
-	} else {
-		push @moves, $uci_move;
-	}
+foreach my $move ($pos->legalMoves) {
+	push @moves, $pos->LAN($move);
 };
 
 my $count = 0;
 
-my $moves = join ', ', map { qq{"$_"} } @moves;
+my $moves = join ', ', map { qq{"$_"} } sort @moves;
 
 my $count = 0;
 $moves =~ s/, /++$count % 8 == 0 ? ",\n\t\t" : ', '/ge;
