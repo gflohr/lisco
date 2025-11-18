@@ -22,7 +22,8 @@ AUTOMAKE_OPTIONS = 1.5 gnits
 SUBDIRS = . tests
 
 lib_LTLIBRARIES = libnu.la
-libnu_la_SOURCES = nu.h
+libnu_la_SOURCES = nu.h chi-internal.h \
+	piece-chars.c
 
 libnu_la_LDFLAGS = -version-info 0:0:0
 
