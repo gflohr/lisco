@@ -1,6 +1,6 @@
 ## This file is part of the chess engine lisco.
 ##
-## Copyright (C) 2002-2021 cantanea EOOD.
+## Copyright (C) 2002-2025 Guido Flohr.
 ##
 ## This program is free software: you can redistribute it and/or modify
 ## it under the terms of the GNU General Public License as published by
@@ -38,4 +38,3 @@ lisco_DEPENDENCIES = $(top_srcdir)/libchi/libchi.la
 
 AM_CPPFLAGS = -I. -I$(srcdir) -I.. -I$(top_srcdir)/lib -I../lib \
 	-I$(top_srcdir)/libchi -I../libchi $(AM_CFLAGS)
-#LIBS = -lgdbm

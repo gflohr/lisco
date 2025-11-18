@@ -1,6 +1,6 @@
 /* This file is part of the chess engine lisco.
  *
- * Copyright (C) 2002-2021 cantanea EOOD.
+ * Copyright (C) 2002-2025 Guido Flohr.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -102,6 +102,11 @@ uci_main(UCIEngineOptions *options)
 					go_on = uci_handle_debug(options, trim(trimmed), out);
 				}
 				break;
+			case 's':
+				if(strcmp(command + 1, "etoption") == 0) {
+					go_on = 1;
+				}
+				break;
 			case 0:
 				go_on = 1;
 				break;
@@ -110,7 +115,7 @@ uci_main(UCIEngineOptions *options)
 		fflush(out);
 
 		if (go_on < 0) {
-			fprintf(out, "Unknown command: %s\n", command);
+			fprintf(out, "info unknown command '%s'\n", command);
 			fflush(out);
 		} else if (go_on == 0) {
 			break;
