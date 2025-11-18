@@ -306,9 +306,6 @@ chi_see(const chi_pos *position, chi_move move)
 
 		side_to_move = ~side_to_move & 0x1;
 	}
-	for (int i = 0; i <= depth; ++i) {
-		printf("gain[%d]: %d\n", i, gain[i]);
-	} 
 	
 	while (--depth) {
 		gain[depth - 1]= -max(-gain[depth - 1], gain[depth]);
