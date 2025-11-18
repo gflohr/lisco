@@ -15,11 +15,17 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
-ACLOCAL_AMFLAGS = -I m4
-AM_CFLAGS = -g -O2
-#SUBDIRS = lib libchi src
-# FIXME! Rename libnu back to libchi, once it is done.
-SUBDIRS = lib libnu
+## Process this file with automake to produce Makefile.in.
 
-EXTRA_DIST = m4/gnulib-cache.m4
+noinst_PROGRAMS = check_libchi
+
+TESTS = ./check_libchi
+
+check_libchi_SOURCES = \
+		check_libchi.c
+
+check_libchi_CFLAGS = $(CFLAGS) $(CHECK_CFLAGS)
+check_libchi_LDADD = ../../lib/liblisco.la ../libnu.la $(LDFLAGS) $(CHECK_LIBS)
+
+AM_CPPFLAGS = -I.. -I$(srcdir)/.. -I$(top_srcdir)/lib \
+	-I$(top_srcdir)/libnu $(AM_CFLAGS)

@@ -324,7 +324,6 @@ BITSIZEOF_SIG_ATOMIC_T = @BITSIZEOF_SIG_ATOMIC_T@
 BITSIZEOF_SIZE_T = @BITSIZEOF_SIZE_T@
 BITSIZEOF_WCHAR_T = @BITSIZEOF_WCHAR_T@
 BITSIZEOF_WINT_T = @BITSIZEOF_WINT_T@
-BITV64 = @BITV64@
 CAN_PRINT_STACK_TRACE = @CAN_PRINT_STACK_TRACE@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
@@ -2122,7 +2121,9 @@ top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
 ACLOCAL_AMFLAGS = -I m4
 AM_CFLAGS = -g -O2
-SUBDIRS = lib libchi src
+#SUBDIRS = lib libchi src
+# FIXME! Rename libnu back to libchi, once it is done.
+SUBDIRS = lib libnu
 EXTRA_DIST = m4/gnulib-cache.m4
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive

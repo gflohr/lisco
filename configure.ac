@@ -63,7 +63,7 @@ else
         fi
 fi
 
-AC_SUBST(BITV64)
+AC_DEFINE_UNQUOTED(BITV64, $BITV64, [The 64-bit unsigned integer type.])
 
 AC_CHECK_INCLUDES_DEFAULT
 AC_PROG_EGREP
@@ -84,6 +84,6 @@ CC="$PTHREAD_CC"
 CXX="$PTHREAD_CXX"
 
 AC_CONFIG_FILES([Makefile lib/Makefile
-                 libchi/libchi.h libchi/Makefile libchi/tests/Makefile \
+                 libnu/Makefile libnu/tests/Makefile \
                  src/Makefile src/tests/Makefile])
 AC_OUTPUT

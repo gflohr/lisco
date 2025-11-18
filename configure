@@ -670,7 +670,6 @@ am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIBOBJS
-BITV64
 CHECK_LIBS
 CHECK_CFLAGS
 PKG_CONFIG_LIBDIR
@@ -16390,8 +16389,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:16393: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:16394: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:16392: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:16393: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -16420,7 +16419,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:16423: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:16422: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -16672,7 +16671,7 @@ fi
 fi
 
 fi
-      echo "$as_me:16675: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:16674: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -20268,8 +20267,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:20271: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:20272: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:20270: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:20271: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -20298,7 +20297,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:20301: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:20300: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -20550,7 +20549,7 @@ fi
 fi
 
 fi
-      echo "$as_me:20553: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:20552: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -20840,8 +20839,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:20843: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:20844: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:20842: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:20843: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -20870,7 +20869,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:20873: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:20872: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -21122,7 +21121,7 @@ fi
 fi
 
 fi
-      echo "$as_me:21125: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21124: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -52560,6 +52559,8 @@ else
 fi
 
 
+printf "%s\n" "#define BITV64 $BITV64" >>confdefs.h
+
 
 
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for egrep" >&5
@@ -52745,7 +52746,7 @@ CXXFLAGS="$CXXFLAGS $PTHREAD_CFLAGS"
 CC="$PTHREAD_CC"
 CXX="$PTHREAD_CXX"
 
-ac_config_files="$ac_config_files Makefile lib/Makefile libchi/libchi.h libchi/Makefile libchi/tests/Makefile src/Makefile src/tests/Makefile"
+ac_config_files="$ac_config_files Makefile lib/Makefile libnu/Makefile libnu/tests/Makefile src/Makefile src/tests/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -53869,9 +53870,8 @@ do
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "lib/Makefile") CONFIG_FILES="$CONFIG_FILES lib/Makefile" ;;
-    "libchi/libchi.h") CONFIG_FILES="$CONFIG_FILES libchi/libchi.h" ;;
-    "libchi/Makefile") CONFIG_FILES="$CONFIG_FILES libchi/Makefile" ;;
-    "libchi/tests/Makefile") CONFIG_FILES="$CONFIG_FILES libchi/tests/Makefile" ;;
+    "libnu/Makefile") CONFIG_FILES="$CONFIG_FILES libnu/Makefile" ;;
+    "libnu/tests/Makefile") CONFIG_FILES="$CONFIG_FILES libnu/tests/Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "src/tests/Makefile") CONFIG_FILES="$CONFIG_FILES src/tests/Makefile" ;;
 

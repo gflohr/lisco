@@ -15,11 +15,23 @@
 ## You should have received a copy of the GNU General Public License
 ## along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AUTOMAKE_OPTIONS = 1.5 gnu no-dependencies
-ACLOCAL_AMFLAGS = -I m4
-AM_CFLAGS = -g -O2
-#SUBDIRS = lib libchi src
-# FIXME! Rename libnu back to libchi, once it is done.
-SUBDIRS = lib libnu
+## Process this file with automake to produce Makefile.in.
 
-EXTRA_DIST = m4/gnulib-cache.m4
+AUTOMAKE_OPTIONS = 1.5 gnits
+
+SUBDIRS = . tests
+
+lib_LTLIBRARIES = libnu.la
+libnu_la_SOURCES = nu.h
+
+libnu_la_LDFLAGS = -version-info 0:0:0
+
+libnu_la_LDFLAGS += -no-undefined
+libnu_la_LIBADD = ../lib/liblisco.la
+
+AM_CPPFLAGS = -I. -I$(srcdir) -I.. -I$(top_srcdir)/lib
+
+# *Never* add -lchi here (bootstrapping problem).
+
+include_HEADERS = nu.h
+
