@@ -49,7 +49,10 @@ AC_C_CONST
 AC_C_BIGENDIAN
 
 AC_CHECK_LIB(m, log10, , AC_MSG_ERROR(unable to find function log10))
-
+AC_CHECK_HEADER([gdbm.h],
+    [],
+    [AC_MSG_ERROR([gdbm.h header not found])])
+AC_CHECK_LIB(gdbm, gdbm_open, , AC_MSG_ERROR(unable to find libgdbm))
 AX_PTHREAD(, AC_MSG_ERROR(thread support is required to compile lisco))
 
 AC_CHECK_SIZEOF(unsigned long)
