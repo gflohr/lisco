@@ -15,12 +15,12 @@ dnl
 dnl You should have received a copy of the GNU General Public License
 dnl along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-AC_PREREQ([2.71])
+AC_PREREQ([2.72])
 AC_INIT([lisco],[0.7.0])
 AC_CONFIG_SRCDIR([src/lisco.c])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIRS([m4])
-AM_INIT_AUTOMAKE([1.16.3 silent-rules parallel-tests subdir-objects])
+AM_INIT_AUTOMAKE([1.17 silent-rules parallel-tests subdir-objects])
 AM_SILENT_RULES([yes])
 
 AC_CONFIG_HEADERS([config.h])
