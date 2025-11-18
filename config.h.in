@@ -485,9 +485,6 @@
 /* Define if the ldexp function is available in libc. */
 #undef HAVE_LDEXP_IN_LIBC
 
-/* Define to 1 if you have the 'gdbm' library (-lgdbm). */
-#undef HAVE_LIBGDBM
-
 /* Define to 1 if you have the 'm' library (-lm). */
 #undef HAVE_LIBM
 

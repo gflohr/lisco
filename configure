@@ -41396,69 +41396,6 @@ else case e in #(
 esac
 fi
 
-ac_fn_c_check_header_compile "$LINENO" "gdbm.h" "ac_cv_header_gdbm_h" "$ac_includes_default"
-if test "x$ac_cv_header_gdbm_h" = xyes
-then :
-
-else case e in #(
-  e) as_fn_error $? "gdbm.h header not found" "$LINENO" 5 ;;
-esac
-fi
-
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for gdbm_open in -lgdbm" >&5
-printf %s "checking for gdbm_open in -lgdbm... " >&6; }
-if test ${ac_cv_lib_gdbm_gdbm_open+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_check_lib_save_LIBS=$LIBS
-LIBS="-lgdbm  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char gdbm_open (void);
-int
-main (void)
-{
-return gdbm_open ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  ac_cv_lib_gdbm_gdbm_open=yes
-else case e in #(
-  e) ac_cv_lib_gdbm_gdbm_open=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_gdbm_gdbm_open" >&5
-printf "%s\n" "$ac_cv_lib_gdbm_gdbm_open" >&6; }
-if test "x$ac_cv_lib_gdbm_gdbm_open" = xyes
-then :
-  printf "%s\n" "#define HAVE_LIBGDBM 1" >>confdefs.h
-
-  LIBS="-lgdbm $LIBS"
-
-else case e in #(
-  e) as_fn_error $? "unable to find libgdbm" "$LINENO" 5 ;;
-esac
-fi
-
 
 
 
